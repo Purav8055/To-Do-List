@@ -6,6 +6,9 @@ const inputBtn = document.getElementById('add')
 const showEnterTodo = document.getElementById('showEnterTodo')
 const enterTodo = document.getElementById('enterTodo')
 
+// Get the logged-in user from localStorage
+const loggedInUser = localStorage.getItem('loggedInUser')
+
 function showTodoInput() {
     enterTodo.style.display = 'block'
 }
@@ -16,7 +19,7 @@ function addTodo(e) {
     e.preventDefault()
     let textValue = todoInput.value
     todos.push(textValue)
-    todosList.innerHTML = ''
+    saveTodos()
     renderTodos()
     todoInput.value = ''
     enterTodo.style.display = 'none'
@@ -24,10 +27,8 @@ function addTodo(e) {
 inputBtn.addEventListener('click', addTodo)
 
 function removeTodo(index) {
-    todos = todos.filter((todo, i) => {
-        return i === index ? false : true
-    })
-
+    todos = todos.filter((todo, i) => i !== index)
+    saveTodos()
     renderTodos()
 }
 
@@ -39,11 +40,28 @@ function editTodo(index) {
     todoInput.value = splicedText
 }
 
+document.getElementById('logoutBtn').addEventListener('click', function() {
+    // Redirect to the login page
+    window.location.href = '../login/login.html';
+});
+
+// Save todos to localStorage for the logged-in user
+function saveTodos() {
+    localStorage.setItem(`${loggedInUser}_todos`, JSON.stringify(todos))
+}
+
+// Load todos from localStorage for the logged-in user
+function loadTodos() {
+    const storedTodos = localStorage.getItem(`${loggedInUser}_todos`)
+    if (storedTodos) {
+        todos = JSON.parse(storedTodos)
+    }
+    renderTodos()
+}
 
 function renderTodos() {
     todosList.innerHTML = ''
     todos.forEach((todo, i) => {
-        let currentHTML = todosList.innerHTML
         let newHTML = (
             `<div class="todoItem">
                 <p>${i + 1}. ${todo}</p>
@@ -53,10 +71,9 @@ function renderTodos() {
                 </div>
             </div>`
         )
-
-        let amendedHTML = currentHTML + newHTML
-        todosList.innerHTML = amendedHTML
+        todosList.innerHTML += newHTML
     })
 }
 
-renderTodos()
+// Load the todos when the page loads
+loadTodos()
