@@ -21,13 +21,13 @@ This is a simple To-Do List web application that allows users to sign up, log in
 
 ## Screenshots
 ### Home Page (To-Do List)
-![Home Page](../ToDoList/images/todo.png)
+![Home Page](images/todo.png)
 
 ### Login Page
-![Login Page](../ToDoList/images/login.png)
+![Login Page](images/login.png)
 
 ### Sign-Up Page
-![Sign-Up Page](../ToDoList//images/signUp.png)
+![Sign-Up Page](images/signUp.png)
 
 ## Installation
 1. Clone the repository to your local machine:
