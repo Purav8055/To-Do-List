@@ -26,8 +26,8 @@ body {
 header,
 main,
 footer {
-    width: 800px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -62,7 +62,6 @@ main {
     align-items: stretch;
     border: 1px solid skyblue;
     position: relative;
-
 }
 
 #enterTodo form:focus-within {
@@ -156,4 +155,50 @@ footer i:hover {
 .logout-btn:hover {
     background-color: #0f172a;
     color: skyblue;
+}
+
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+    body {
+        padding: 16px;
+    }
+
+    header,
+    main,
+    footer {
+        width: 100%;
+        margin: 0;
+    }
+
+    .plusIcon {
+        font-size: 1.25rem;
+    }
+
+    #enterTodo input {
+        padding: 8px;
+    }
+
+    #enterTodo button {
+        padding: 0 8px;
+    }
+
+    .logout-btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .plusIcon {
+        font-size: 1.2rem;
+    }
+
+    .logout-btn {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
 }

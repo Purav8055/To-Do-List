@@ -8,6 +8,7 @@ body {
     height: 100vh;
     margin: 0;
 }
+
 .login-container {
     background-color: #1e1e1e;
     padding: 20px;
@@ -16,10 +17,12 @@ body {
     width: 300px;
     text-align: center;
 }
+
 h2 {
     margin-bottom: 20px;
     color: #ffffff;
 }
+
 input {
     width: 100%;
     padding: 10px;
@@ -29,9 +32,11 @@ input {
     border-radius: 4px;
     color: #e0e0e0;
 }
+
 input::placeholder {
     color: #888;
 }
+
 button {
     width: 100%;
     padding: 10px;
@@ -41,17 +46,51 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
 button:hover {
     background-color: #0056b3;
 }
+
 .signup-link {
     margin-top: 10px;
     color: #ffffff;
 }
+
 .signup-link a {
     color: blue;
     text-decoration: none;
 }
+
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    button {
+        padding: 6px;
+    }
 }
