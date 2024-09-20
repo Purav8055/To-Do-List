@@ -8,6 +8,7 @@
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
 - [Project Structure](#project-structure)
+- [Live Demo](#live-demo)
 
 ## Overview
 This is a simple To-Do List web application that allows users to sign up, log in, and manage their tasks. It is built using HTML, CSS, and JavaScript, and stores user data in the browser's `localStorage`. The application is fully responsive for mobile and tablet devices.
@@ -75,3 +76,8 @@ Your tasks will be saved in the browser's `localStorage` and will be available t
 │   ├── signUp.png
 │   ├── todo.png
 ├── README.md
+├── index.html
+```
+
+## Live Demo
+Access the live version of the project here: [To-Do List Application](https://purav8055.github.io/To-Do-List)
